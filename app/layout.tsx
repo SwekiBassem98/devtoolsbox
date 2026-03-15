@@ -6,14 +6,31 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'DevToolsBox - Free Developer Tools',
+  title: {
+    default: 'DevToolsBox - Free Developer Tools',
+    template: '%s | DevToolsBox',
+  },
   description: 'A collection of free developer tools including JSON formatter, password generator, Base64 encoder, markdown preview, and slug generator.',
-  keywords: ['developer tools', 'JSON formatter', 'password generator', 'Base64 encoder', 'markdown preview', 'slug generator', 'SEO tools'],
+  keywords: ['developer tools', 'JSON formatter', 'password generator', 'Base64 encoder', 'markdown preview', 'slug generator', 'SEO tools', 'URL encoder', 'UUID generator', 'word counter'],
   authors: [{ name: 'DevToolsBox' }],
+  creator: 'DevToolsBox',
+  publisher: 'DevToolsBox',
+  metadataBase: new URL('https://devtoolsbox.com'),
   openGraph: {
     title: 'DevToolsBox - Free Developer Tools',
     description: 'A collection of free developer tools to boost your productivity.',
     type: 'website',
+    locale: 'en_US',
+    siteName: 'DevToolsBox',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'DevToolsBox - Free Developer Tools',
+    description: 'A collection of free developer tools to boost your productivity.',
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 }
 
@@ -24,6 +41,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* Google AdSense - Replace ca-pub-XXXXXXXXXXXXXXX with your AdSense publisher ID */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7414268235116585"
+          crossOrigin="anonymous"
+        />
+        {/* Favicon */}
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="manifest" href="/manifest.json" />
+        {/* AdSense Ad Slot Placeholders - Uncomment and replace with your ad slot IDs */}
+        {/*
+        <meta name="google-ad-slot-1" content="YOUR_AD_SLOT_ID_1" />
+        <meta name="google-ad-slot-2" content="YOUR_AD_SLOT_ID_2" />
+        <meta name="google-ad-slot-3" content="YOUR_AD_SLOT_ID_3" />
+        */}
+      </head>
       <body className={`${inter.className} min-h-screen flex flex-col bg-gray-50`}>
         {/* Navbar */}
         <header className="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
@@ -98,6 +133,12 @@ export default function RootLayout({
                   className="text-gray-500 hover:text-primary-600 transition-colors text-sm"
                 >
                   Tools
+                </Link>
+                <Link 
+                  href="/privacy" 
+                  className="text-gray-500 hover:text-primary-600 transition-colors text-sm"
+                >
+                  Privacy
                 </Link>
               </div>
             </div>

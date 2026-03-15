@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import AdUnit, { AdUnitTop, AdUnitBottom } from './AdUnit';
 
 interface ToolLayoutProps {
   children: ReactNode;
@@ -18,9 +19,16 @@ export default function ToolLayout({ children, title, description }: ToolLayoutP
             {description}
           </p>
         </header>
+        
+        {/* Ad Unit - Top of Tool */}
+        <AdUnitTop />
+        
         <div className="bg-white rounded-lg border border-gray-200 shadow-sm p-6">
           {children}
         </div>
+        
+        {/* Ad Unit - Bottom of Tool */}
+        <AdUnitBottom />
       </div>
     </div>
   );

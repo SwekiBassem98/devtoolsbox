@@ -1,0 +1,17 @@
+{
+  "name": "DevToolsBox",
+  "short_name": "DevToolsBox",
+  "description": "A collection of free developer tools including JSON formatter, password generator, Base64 encoder, and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F9FAFB",
+  "theme_color": "#3B82F6",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
